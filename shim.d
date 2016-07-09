@@ -21,7 +21,12 @@ struct JsonChallenge
 
 void main()
 {
-	auto challenge = getCaptcha();
+	CaptchaSpec spec;
+	spec.allowEasy = false;
+	spec.allowHard = true;
+	spec.allowStatic = false;
+
+	auto challenge = getCaptcha(spec);
 	JsonChallenge(
 		challenge.question.encodeEntities() ~ "\n<pre>" ~ challenge.code.encodeEntities() ~ "</pre>",
 		challenge.answers.map!toLower.array()
