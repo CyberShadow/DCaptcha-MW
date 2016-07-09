@@ -1,4 +1,4 @@
-// PHP-D shiw for DCaptcha.
+// PHP-D shim for DCaptcha.
 // Written in the D programming language.
 
 module shim;
